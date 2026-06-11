@@ -1,0 +1,13 @@
+USB DAC Player
+Copyright 2026 三水深
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This product bundles and dynamically links the following third-party
+component, which is licensed separately (see THIRD_PARTY_NOTICES.md):
+
+  - libusb (https://libusb.info/), licensed under the GNU Lesser General
+    Public License v2.1 or later (LGPL-2.1-or-later). The unmodified,
+    prebuilt shared library is distributed at
+    usbaudio/src/main/libusbLib/arm64-v8a/libusb1.0.so and may be replaced
+    by the user with their own build of libusb.

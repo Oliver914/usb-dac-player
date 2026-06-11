@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.salt.usb.audio'
+    compileSdk 35
+
+    defaultConfig {
+        minSdk 29   // AudioPlaybackCapture (system media capture) requires API 29+
+        targetSdk 35
+        consumerProguardFiles "consumer-rules.pro"
+
+        ndk {
+            abiFilters "arm64-v8a"
+        }
+
+        // NOTE: The native engine (usb_audio_output.so) is shipped PREBUILT under
+        // src/main/libusbLib/ and packaged via jniLibs below, so no CMake is
+        // required to build the APK. To rebuild it from cpp/usb_audio_output.c
+        // instead, install CMake via the SDK Manager and re-enable the two
+        // externalNativeBuild blocks (here and in the android {} block).
+        // externalNativeBuild {
+        //     cmake {
+        //         cppFlags ""
+        //         arguments "-DANDROID_STL=c++_shared"
+        //     }
+        // }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    // CMake build disabled — see note in defaultConfig. Re-enable alongside it.
+    // externalNativeBuild {
+    //     cmake {
+    //         path file("src/main/cpp/CMakeLists.txt")
+    //         version "3.18.1"
+    //     }
+    // }
+
+    // Ship the prebuilt native libs inside the APK:
+    //   libusb1.0.so            (libusb; filename matches its SONAME)
+    //   libusb_audio_output.so  (our engine; DT_NEEDED -> libusb1.0.so)
+    // Both must be present at runtime or System.loadLibrary fails.
+    sourceSets {
+        main {
+            jniLibs.srcDirs += 'src/main/libusbLib'
+        }
+    }
+
+    packagingOptions {
+        jniLibs {
+            pickFirsts += ['**/libusb1.0.so', '**/libusb_audio_output.so']
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+}

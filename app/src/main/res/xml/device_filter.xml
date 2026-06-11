@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- USB Audio class (0x01): matches USB DACs / "小尾巴" dongles. -->
+    <usb-device class="1" />
+</resources>

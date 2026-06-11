@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">USB DAC Player</string>
+
+    <string name="title">USB DAC 独占播放器</string>
+    <string name="subtitle">捕获系统媒体音频 → USB 小尾巴独占输出</string>
+
+    <string name="refresh">刷新设备</string>
+    <string name="grant_usb">授权 USB 设备</string>
+    <string name="start">开始独占输出</string>
+    <string name="stop">停止</string>
+
+    <string name="no_device">未检测到 USB 音频设备（DAC）</string>
+    <string name="mute_speaker">同时静音手机扬声器（尽力而为）</string>
+
+    <string name="section_device">USB 设备</string>
+    <string name="section_quality">输出音质</string>
+    <string name="quality_auto">自动（最高音质）</string>
+    <string name="quality_need_grant">授权设备后自动探测</string>
+    <string name="status_idle">未在输出</string>
+    <string name="status_running">正在独占输出</string>
+    <string name="status_hint">选择设备后点击「开始独占输出」</string>
+
+    <string name="section_log">运行日志</string>
+    <string name="share_log">分享日志</string>
+
+    <string name="notif_channel_name">USB DAC 输出</string>
+    <string name="notif_title">USB DAC 独占输出中</string>
+    <string name="notif_text">正在捕获系统媒体音频并发送到 USB DAC</string>
+</resources>
