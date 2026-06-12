@@ -54,18 +54,6 @@ Tap **"Share log"** in the app and send it to the author, or attach it to a GitH
 (it includes phone model, dongle model, probed formats, and where it got stuck).
 Forks / pull requests welcome.
 
-## Known limitations (stated honestly)
-
-- **Not bit-perfect**: the source is Android's 48 kHz system mix (upsampled to the chosen format),
-  not the original file's bit-exact data. Running the DAC at 32-bit/high rates mainly leverages the
-  DAC's better operating mode — it does not add information. True lossless / native DSD would need a
-  "decode local files → DAC" player path (not implemented).
-- **Capturability**: only apps that allow capture (`USAGE_MEDIA/GAME/UNKNOWN`, not opted out) can be captured.
-- **Output power is hardware**: the app already outputs at full scale; for more drive, max the media
-  volume and use the dongle's high-gain mode.
-- **App-store publishing is hard**: capturing other apps' audio is policy-sensitive (especially
-  Google Play, plus copyright), and the prebuilt libusb is not yet 16 KB-page aligned. **Sideloading is unaffected.**
-
 ## License
 
 This project's code (author: 三水深) is licensed under **Apache-2.0**, see [LICENSE](LICENSE).

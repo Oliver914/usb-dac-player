@@ -15,8 +15,6 @@
 
 **安装**:下载下方 `app-release.apk`,在手机上允许「未知来源」后安装(侧载)。仅支持 USB OTG + USB 音频设备的安卓手机(Android 10+)。
 
-**已知限制**:音源是系统 48k 混音(再上采样),非源文件逐比特;捕获其它 App 音频属系统能力,部分禁用采集的 App 无法捕获。详见 [README](README.md)。
-
 ---
 
 ### English
@@ -31,5 +29,3 @@
 - 📐 Edge-to-edge UI that adapts to display cutouts (notches).
 
 **Install**: download `app-release.apk` below and sideload it (allow "unknown sources"). Requires an Android phone (10+) with USB OTG + a USB audio device.
-
-**Known limitations**: source is the 48 kHz system mix (upsampled), not bit-perfect; only capturable apps can be captured. See the [README](README.en.md).
