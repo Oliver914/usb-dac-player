@@ -1,3 +1,5 @@
+**简体中文** | [English](README.en.md)
+
 # USB DAC Player
 
 把**系统正在播放的媒体音频**捕获下来，绕过 Android 自带的混音/重采样路径，通过 **libusb 等时传输（isochronous OUT）**直接独占输出给 USB 小尾巴 DAC。
